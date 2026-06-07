@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoVerse — Explore the World of Cars</title>
+  <meta name="description" content="Discover engineering marvels, performance legends, and everyday icons. Your ultimate automotive companion." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════
+       PAGE LOADER
+  ═══════════════════════════════ -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">AUTO<span>VERSE</span></div>
+      <div class="loader-track">
+        <div class="loader-bar"></div>
+      </div>
+      <p class="loader-caption">Loading Experience…</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       NAVIGATION BAR
+  ═══════════════════════════════ -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="#home" class="nav-logo" aria-label="AutoVerse Home">
+        AUTO<span>VERSE</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#home"    class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#cars"   class="nav-link"        data-section="cars">Cars</a></li>
+        <li><a href="#about"  class="nav-link"        data-section="about">About</a></li>
+        <li><a href="#contact" class="nav-link"       data-section="contact">Contact</a></li>
+      </ul>
+
+      <!-- Right actions -->
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <a href="#cars" class="btn-nav-cta">Explore Cars</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════ -->
+  <section id="home" class="hero" aria-label="Hero — Explore the World of Cars">
+
+    <!-- Background carousel (decorative) -->
+    <div class="hero-carousel" aria-hidden="true">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Images injected by script.js -->
+      </div>
+    </div>
+
+    <!-- Gradient overlay -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Hero content -->
+    <div class="hero-content">
+      <p class="hero-eyebrow animate-up" style="--delay:0s">Premium Automotive Experience</p>
+
+      <h1 class="hero-title animate-up" style="--delay:.12s">
+        Explore the<br />
+        <em class="hero-accent">World of Cars</em>
+      </h1>
+
+      <p class="hero-sub animate-up" style="--delay:.24s">
+        Made by car enthusiast,<br class="br-desktop" />
+        DP51.
+      </p>
+
+      <div class="hero-actions animate-up" style="--delay:.36s">
+        <a href="#cars" class="btn-primary">
+          <span>Explore Cars</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#about" class="btn-ghost">
+          <i class="fas fa-play-circle"></i>
+          <span>Our Story</span>
+        </a>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="hero-stats animate-up" style="--delay:.48s">
+        <div class="hstat">
+          <strong>500+</strong>
+          <span>Models</span>
+        </div>
+        <div class="hstat-div" aria-hidden="true"></div>
+        <div class="hstat">
+          <strong>7</strong>
+          <span>Categories</span>
+        </div>
+        <div class="hstat-div" aria-hidden="true"></div>
+        <div class="hstat">
+          <strong>50+</strong>
+          <span>Brands</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CARS SECTION
+  ═══════════════════════════════ -->
+  <section id="cars" class="cars-section" aria-label="Car Collection">
+    <div class="container">
+
+      <!-- Section header -->
+      <header class="section-header reveal-up">
+        <p class="eyebrow">Our Collection</p>
+        <h2 class="section-title">Find Your <span class="text-gold">Dream Car</span></h2>
+        <p class="section-sub">Browse our curated selection of the world's finest automobiles — from daily drivers to apex machines.</p>
+      </header>
+
+      <!-- Controls row -->
+      <div class="controls-row reveal-up">
+        <!-- Search -->
+        <div class="search-wrap">
+          <i class="fas fa-search search-ico" aria-hidden="true"></i>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search by name or brand…"
+            autocomplete="off"
+            aria-label="Search cars by name or brand"
+          />
+          <button class="search-clear hidden" id="searchClear" aria-label="Clear search">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Sort -->
+        <div class="sort-wrap">
+          <label for="sortSelect" class="sr-only">Sort cars</label>
+          <select id="sortSelect" class="sort-select" aria-label="Sort cars">
+            <option value="default">Sort By</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="hp-desc">Most Powerful</option>
+            <option value="year-desc">Newest First</option>
+            <option value="name-asc">Name A→Z</option>
+          </select>
+          <i class="fas fa-chevron-down sort-arrow" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <!-- Category filter tabs -->
+      <div class="filter-tabs reveal-up" role="group" aria-label="Filter by category">
+        <button class="filter-btn active" data-filter="all"       aria-pressed="true">All</button>
+        <button class="filter-btn"        data-filter="sedan"     aria-pressed="false">Sedan</button>
+        <button class="filter-btn"        data-filter="suv"       aria-pressed="false">SUV</button>
+        <button class="filter-btn"        data-filter="hatchback" aria-pressed="false">Hatchback</button>
+        <button class="filter-btn"        data-filter="muv"       aria-pressed="false">MUV/MPV</button>
+        <button class="filter-btn"        data-filter="sports"    aria-pressed="false">Sports Car</button>
+        <button class="filter-btn"        data-filter="supercar"  aria-pressed="false">Super Car</button>
+        <button class="filter-btn"        data-filter="hypercar"  aria-pressed="false">Hyper Car</button>
+        <button class="filter-btn"        data-filter="roadster"  aria-pressed="false">Roadster</button>
+        <button class="filter-btn"        data-filter="pickup"    aria-pressed="false">Pickup</button>
+        <button class="filter-btn"        data-filter="van"       aria-pressed="false">Van</button>
+        
+      </div>
+
+      <!-- Results info -->
+      <div class="results-info reveal-up" aria-live="polite">
+        <span id="resultsCount">21 cars found</span>
+      </div>
+
+      <!-- Car grid -->
+      <div class="cars-grid" id="carsGrid" role="list" aria-label="Car cards">
+        <!-- Cards injected by script.js -->
+      </div>
+
+      <!-- Empty state -->
+      <div class="no-results hidden" id="noResults" role="status">
+        <i class="fas fa-car-crash" aria-hidden="true"></i>
+        <h3>No Cars Found</h3>
+        <p>Try different keywords or reset your filters.</p>
+        <button class="btn-primary" id="resetBtn">Reset Filters</button>
+      </div>
+
+      <!-- Load More -->
+      <div class="load-more-wrap" id="loadMoreWrap">
+        <button class="btn-load-more" id="loadMoreBtn" aria-label="Load more cars">
+          <span>Load More Cars</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       ABOUT SECTION
+  ═══════════════════════════════ -->
+  <section id="about" class="about-section" aria-label="About AutoVerse">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Left: copy -->
+        <div class="about-copy reveal-left">
+          <p class="eyebrow">Who We Are</p>
+          <h2 class="section-title">Built by Car <span class="text-gold">Enthusiasts</span></h2>
+          <p class="about-desc">
+            AutoVerse is more than a database — it's a passion project born from a love of engineering,
+            design, and the thrill of the open road. We meticulously curate detailed specifications,
+            stunning visuals, and honest performance data for every automobile that matters.
+          </p>
+          <p class="about-desc">
+            Whether you're a first-time buyer comparing budget sedans or a collector hunting the
+            rarest hypercars, AutoVerse gives you the data you need to make informed decisions.
+          </p>
+
+          <!-- Feature list -->
+          <ul class="feature-list" role="list">
+            <li class="feature-item">
+              <div class="feat-icon" aria-hidden="true"><i class="fas fa-database"></i></div>
+              <div>
+                <h4>Comprehensive Data</h4>
+                <p>Full specs, performance figures, and pricing for every model.</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feat-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+              <div>
+                <h4>Real-Time Updates</h4>
+                <p>Stay current with the latest releases and market prices.</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feat-icon" aria-hidden="true"><i class="fas fa-palette"></i></div>
+              <div>
+                <h4>Color Visualizer</h4>
+                <p>See your dream car in every available color option.</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feat-icon" aria-hidden="true"><i class="fas fa-sliders-h"></i></div>
+              <div>
+                <h4>Smart Filtering</h4>
+                <p>Find exactly what you're looking for in seconds.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: stat cards -->
+        <div class="about-stats reveal-right">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-car"></i></div>
+            <div class="stat-num counter" data-target="500">0</div>
+            <div class="stat-label">Car Models</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-icon"><i class="fas fa-industry"></i></div>
+            <div class="stat-num counter" data-target="50">0</div>
+            <div class="stat-label">Brands</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-num counter" data-target="120">0</div>
+            <div class="stat-label">K+ Users</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-star"></i></div>
+            <div class="stat-num counter" data-target="49" data-decimal="true">0</div>
+            <div class="stat-label">Avg. Rating</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CTA / CONTACT SECTION
+  ═══════════════════════════════ -->
+  <section id="contact" class="cta-section" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="cta-inner reveal-up">
+        <p class="eyebrow">Stay Connected</p>
+        <h2 class="cta-title">Never Miss a New <span class="text-gold">Release</span></h2>
+        <p class="cta-sub">Get exclusive updates on the latest car launches, performance reviews, and pricing alerts — straight to your inbox.</p>
+        <form class="cta-form" id="ctaForm" novalidate aria-label="Newsletter signup form">
+          <input type="email" class="cta-input" id="ctaEmail" placeholder="Enter your email address" aria-label="Email address" required />
+          <button type="submit" class="btn-primary">
+            <span>Subscribe</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+        <p class="cta-note" id="ctaNote" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FOOTER
+  ═══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">AUTO<span>VERSE</span></div>
+          <p>Your ultimate automotive companion. Discover, compare, and fall in love with every car on the planet.</p>
+          <div class="social-links" role="list" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Twitter" role="listitem"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram" role="listitem"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube" role="listitem"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook" role="listitem"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <!-- Explore links -->
+        <nav class="footer-nav" aria-label="Explore cars">
+          <h4>Explore</h4>
+          <ul role="list">
+            <li><a href="#cars">All Cars</a></li>
+            <li><a href="#cars" data-goto="sedan">Sedans</a></li>
+            <li><a href="#cars" data-goto="suv">SUVs</a></li>
+            <li><a href="#cars" data-goto="sports">Sports Cars</a></li>
+            <li><a href="#cars" data-goto="supercar">Super Cars</a></li>
+            <li><a href="#cars" data-goto="hypercar">Hyper Cars</a></li>
+          </ul>
+        </nav>
+
+        <!-- Company links -->
+        <nav class="footer-nav" aria-label="Company">
+          <h4>Company</h4>
+          <ul role="list">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Legal links -->
+        <nav class="footer-nav" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul role="list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">DMCA</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 AutoVerse. All rights reserved. Crafted with <i class="fas fa-heart" aria-hidden="true"></i> for car enthusiasts worldwide.</p>
+        <p>Images via <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════
+       CAR DETAIL MODAL
+  ═══════════════════════════════ -->
+  <div class="modal-overlay hidden" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Car details">
+    <div class="modal" id="carModal">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body" id="modalBody">
+        <!-- Filled dynamically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+</body>
+</html>
